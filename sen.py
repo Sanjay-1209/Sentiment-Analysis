@@ -1,9 +1,14 @@
+import spacy
 import streamlit as st
 from textblob import TextBlob
-import spacy
 
-# Load spaCy model for NLP tasks
-nlp = spacy.load('en_core_web_sm')
+# Check if the spaCy model is available
+model_name = 'en_core_web_sm'
+try:
+    nlp = spacy.load(model_name)
+except OSError:
+    st.error(f"Model '{model_name}' is not installed. Please run 'python -m spacy download {model_name}' to install it.")
+
 
 # Function to analyze sentiment using TextBlob
 def analyze_sentiment(review_text):
