@@ -1,4 +1,5 @@
 streamlit
 textblob
+TextBlob
 spacy
 en-core-web-sm==3.5.0
